@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Johan Valentini</title>
+	<meta charset="utf-8">
+	
+	<style>
+      @-webkit-keyframes orbit{
+        0%{
+          -ms-transform: translate3d(-90px, -90px, 0);
+          -moz-transform: translate3d(-90px, -90px, 0);
+          -webkit-transform: translate3d(-90px, -90px, 0);
+          transform: translate3d(-90px, -90px, 0);
+
+        }
+        
+        25%{
+
+          
+        }
+        
+        50%{
+          -ms-transform: translate3d(90px, 90px, 0);
+          -moz-transform: translate3d(90px, 90px, 0);
+          -webkit-transform: translate3d(90px, 90px, 0);
+          transform: translate3d(90px, 90px, 0) ;
+          
+          
+        }
+        
+        75%{
+
+        }
+        
+        100%{
+          -ms-transform: translate3d(-90px, -90px, 0);
+          -moz-transform: translate3d(-90px, -90px, 0);
+          -webkit-transform: translate3d(-90px, -90px, 0);
+          transform: translate3d(-90px, -90px, 0);
+
+        }
+      }
+      
+      @keyframes orbit{
+        0%{
+          -ms-transform: translate3d(-90px, -90px, 0);
+          -moz-transform: translate3d(-90px, -90px, 0);
+          -webkit-transform: translate3d(-90px, -90px, 0);
+          transform: translate3d(-90px, -90px, 0);
+
+        }
+        
+        25%{
+
+          
+        }
+        
+        50%{
+          -ms-transform: translate3d(90px, 90px, 0);
+          -moz-transform: translate3d(90px, 90px, 0);
+          -webkit-transform: translate3d(90px, 90px, 0);
+          transform: translate3d(90px, 90px, 0) ;
+          
+          
+        }
+        
+        75%{
+
+        }
+        
+        100%{
+          -ms-transform: translate3d(-90px, -90px, 0);
+          -moz-transform: translate3d(-90px, -90px, 0);
+          -webkit-transform: translate3d(-90px, -90px, 0);
+          transform: translate3d(-90px, -90px, 0);
+
+        }
+      }
+      
+      
+      
+
+      @-webkit-keyframes orbit-small{
+        0%{
+          -ms-transform: translate3d(-30px, -30px, 0);
+          -moz-transform: translate3d(-30px, -30px, 0);
+          -webkit-transform: translate3d(-30px, -30px, 0);
+          transform: translate3d(-30px, -30px, 0);
+
+        }
+        
+        25%{
+
+          
+        }
+        
+        50%{
+          -ms-transform: translate3d(30px, 30px, 0);
+          -moz-transform: translate3d(30px, 30px, 0);
+          -webkit-transform: translate3d(30px, 30px, 0);
+          transform: translate3d(30px, 30px, 0) ;
+          
+          
+        }
+        
+        75%{
+
+        }
+        
+        100%{
+          -ms-transform: translate3d(-30px, -30px, 0);
+          -moz-transform: translate3d(-30px, -30px, 0);
+          -webkit-transform: translate3d(-30px, -30px, 0);
+          transform: translate3d(-30px, -30px, 0);
+
+        }
+      }
+
+      @keyframes orbit-small{
+        0%{
+          -ms-transform: translate3d(-30px, -30px, 0);
+          -moz-transform: translate3d(-30px, -30px, 0);
+          -webkit-transform: translate3d(-30px, -30px, 0);
+          transform: translate3d(-30px, -30px, 0);
+
+        }
+        
+        25%{
+
+          
+        }
+        
+        50%{
+          -ms-transform: translate3d(30px, 30px, 0);
+          -moz-transform: translate3d(30px, 30px, 0);
+          -webkit-transform: translate3d(30px, 30px, 0);
+          transform: translate3d(30px, 30px, 0) ;
+          
+          
+        }
+        
+        75%{
+
+        }
+        
+        100%{
+          -ms-transform: translate3d(-30px, -30px, 0);
+          -moz-transform: translate3d(-30px, -30px, 0);
+          -webkit-transform: translate3d(-30px, -30px, 0);
+          transform: translate3d(-30px, -30px, 0);
+
+        }
+      }
+      
+      
+      html,body{
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .hide{
+        display: none;
+      }
+      .show{
+        display: block;
+      }
+      .container{
+        width: 450px;
+        height: 201px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+      }
+
+
+      
+      svg{
+        display: block;
+        margin: 0 auto;
+        
+      }
+
+      .johansvg{
+        margin-top: 50px;
+      }
+
+      path{
+        display: block;
+        z-index: 99;
+        fill: transparent;
+        -webkit-transition: fill 0.5s ease;
+        transition: fill 0.5s ease;
+      }
+
+      path.done{
+        fill: #112;
+        -webkit-transition: fill 0.5s ease;
+        transition: fill 0.5s ease;
+      }
+
+
+      .satelite{
+
+        -ms-animation: orbit 8s ease infinite;
+        -moz-animation: orbit 8s ease infinite;
+        -webkit-animation: orbit 8s ease infinite;
+        animation: orbit 8s ease infinite;
+
+
+        z-index: 100;
+        width: 40px; 
+        height: 40px; 
+        background-color: #112;
+        
+        border-radius: 20px;
+        
+        position: absolute;
+        top: -40px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+
+      }
+      .satelite-of-satelite{
+
+
+          
+        -ms-animation: orbit-small 2s ease infinite;
+        -moz-animation: orbit-small 2s ease infinite;
+        -webkit-animation: orbit-small 2s ease infinite;
+        animation: orbit-small 2s ease infinite;
+
+        z-index: 100;
+        width: 20px; 
+        height: 20px; 
+        background-color: #112;
+        
+        border-radius: 10px;
+        
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        
+      }
+	</style>
+</head>
+<body>
+  <div class="container">
+    
+
+    <svg id="planetsvg" class="planetsvg" version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px" height="150px" viewBox="-1 -1 152 152" xml:space="preserve">
+      <path stroke="#112" id="i14" d="M74.171875,0.0002441c40.9638672,0,74.171875,33.2080078,74.171875,74.171875s-33.2080078,74.171875-74.171875,74.171875S0,115.1359863,0,74.1721191S33.2080078,0.0002441,74.171875,0.0002441z"/>
+    </svg>
+    <svg version="1.0" id="johansvg" class="johansvg" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="433px" height="53px" viewBox="0 0 433 53" style="enable-background:new 0 0 433 53;" xml:space="preserve">
+
+      <path stroke="#112" id="i0" d="M22.3642578,12.7836914v18.159668c0,2.1689453-0.1518555,3.7871094-0.4545898,4.8525391c-0.3027344,1.2119141-0.8178711,2.2363281-1.5449219,3.0722656c-1.4179688,1.6601562-3.2963867,2.4902344-5.6352539,2.4902344c-1.769043,0-3.4233398-0.4628906-4.9624023-1.3876953l2.0722656-3.6289062c1.0297852,0.6904297,1.9936523,1.0361328,2.8901367,1.0361328c1.2602539,0,2.1328125-0.4785156,2.6176758-1.4355469c0.5092773-0.9560547,0.7636719-2.6269531,0.7636719-5.0126953V12.7836914H22.3642578z"/>
+      <path stroke="#112" id="i1" d="M33.2744141,26.6894531c0-3.9501953,1.4477539-7.34375,4.3442383-10.1796875c2.8837891-2.8354492,6.3500977-4.253418,10.3974609-4.253418c3.9990234,0,7.4282227,1.4301758,10.2885742,4.2900391c2.8720703,2.8598633,4.3081055,6.2954102,4.3081055,10.3061523c0,4.0361328-1.4423828,7.4589844-4.3261719,10.2705078c-2.8964844,2.8242188-6.3925781,4.2353516-10.4887695,4.2353516c-3.6235352,0-6.8769531-1.2539062-9.7612305-3.7626953C34.8618164,34.8212891,33.2744141,31.1855469,33.2744141,26.6894531z M37.5458984,26.734375c0,3.1005859,1.0419922,5.6484375,3.1264648,7.6464844c2.0722656,1.9980469,4.465332,2.9970703,7.1801758,2.9970703c2.9448242,0,5.4287109-1.0175781,7.4526367-3.0517578c2.0239258-2.0576172,3.0356445-4.5644531,3.0356445-7.5185547c0-2.9902344-0.9995117-5.4970703-2.9990234-7.5195312c-1.987793-2.0341797-4.4477539-3.0507812-7.3803711-3.0507812c-2.9204102,0-5.3867188,1.0166016-7.3979492,3.0507812C38.5517578,21.2988281,37.5458984,23.7802734,37.5458984,26.734375z"/>
+      <path stroke="#112" id="i2" d="M77.7583008,23.7626953h12.1064453V12.7836914h4.2353516v28.065918h-4.2353516V27.7431641H77.7583008v13.1064453h-4.2353516v-28.065918h4.2353516V23.7626953z"/>
+      <path stroke="#112" id="i3" d="M122.8964844,34.0332031h-12.0151367l-3.1264648,6.8164062h-4.5625l13.8876953-29.8291016l13.3964844,29.8291016h-4.6352539L122.8964844,34.0332031z M121.1699219,30.0517578l-4.1625977-9.5429688l-4.362793,9.5429688H121.1699219z"/>
+      <path stroke="#112" id="i4" d="M139.5688477,40.8496094V10.875l20.4677734,21.4130859V12.7836914h4.2353516v29.7749023l-20.4677734-21.3583984v19.6494141H139.5688477z"/>
+      <path stroke="#112" id="i5" d="M195.0722656,12.7836914l7.7617188,19.449707l7.8706055-19.449707h4.6352539l-12.5966797,30.1743164l-12.3061523-30.1743164H195.0722656z"/>
+      <path stroke="#112" id="i6" d="M238.5566406,34.0332031h-12.015625l-3.1269531,6.8164062h-4.5620117l13.8881836-29.8291016l13.3964844,29.8291016h-4.6347656L238.5566406,34.0332031z M236.8300781,30.0517578l-4.1640625-9.5429688l-4.3613281,9.5429688H236.8300781z"/>
+      <path stroke="#112" id="i7" d="M259.4648438,12.7836914v24.0854492h8.2519531v3.9804688h-12.4873047v-28.065918H259.4648438z"/>
+      <path stroke="#112" id="i8" d="M292.8046875,16.7646484h-11.2509766v6.7431641h10.9238281v3.9814453h-10.9238281v9.3798828h11.2509766v3.9804688h-15.4863281v-28.065918h15.4863281V16.7646484z"/>
+      <path stroke="#112" id="i9" d="M303.9521484,40.8496094V10.875l20.4677734,21.4130859V12.7836914h4.2353516v29.7749023L308.1875,21.2001953v19.6494141H303.9521484z"/>
+      <path stroke="#112" id="i10" d="M348.7080078,16.7646484v24.0849609h-4.2353516V16.7646484h-6.453125v-3.980957h17.1230469v3.980957H348.7080078z"/>
+      <path stroke="#112" id="i11" d="M368.7441406,12.7836914v28.065918h-4.2353516v-28.065918H368.7441406z"/>
+      <path stroke="#112" id="i12" d="M381.0722656,40.8496094V10.875l20.4677734,21.4130859V12.7836914h4.2353516v29.7749023l-20.4677734-21.3583984v19.6494141H381.0722656z"/>
+      <path stroke="#112" id="i13" d="M422.3203125,12.7836914v28.065918h-4.2353516v-28.065918H422.3203125z"/>
+      
+    </svg>
+    <div class="satelite">
+      <div class="satelite-of-satelite"></div>  
+    </div>  
+    
+  </div>
+    
+  
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
